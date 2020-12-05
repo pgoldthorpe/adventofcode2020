@@ -10,11 +10,11 @@ def main():
     col = int(col.replace('L','0').replace('R','1'), 2)
     return 8 * row + col
 
-  x = [seat_number(line) for line in data]
+  x = {seat_number(line) for line in data}
 
   if __name__ == "__main__":
     print("The solution to problem 1 is: {}".format(max(x)))
-    print("The solution to problem 2 is: {}".format(set( range(min(x), max(x)+1)) - set(x) ))
+    print("The solution to problem 2 is: {}".format( set(range(min(x), max(x)+1)) - x ))
 
 start = time.time()
 main()
